@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="./node_modules/jquery/dist/jquery.js"></script>
+    <script type="text/javascript">
+        function loadData() {
+            $.get({
+                url:'http://localhost:8000/jsonp-data',
+                dataType:'jsonp',
+                success:function (data) {
+                    $('#data').text(JSON.stringify(data))
+                }
+            })
+        }
+    </script>
+</head>
+<body>
+<div>
+    <button onclick="loadData()">please click me gain client data</button>
+</div>
+<div id="data"></div>
+</body>
+</html>
